@@ -1,7 +1,9 @@
 const express = require("express");
 
 const app = express();
-const PORT = 3000;
+
+// Use the port from environment variables, or default to 3000
+const PORT = process.env.PORT || 3000;
 
 // Simple API
 app.get("/", (req, res) => {
@@ -9,5 +11,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
